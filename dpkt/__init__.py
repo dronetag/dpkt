@@ -5,9 +5,9 @@ import sys
 
 __author__ = 'Various'
 __author_email__ = ''
-__license__ = 'BSD-3-Clause'
-__url__ = 'https://github.com/kbandla/dpkt'
-__version__ = '1.9.8'
+__license__ = ' '
+__url__ = 'https://github.com/dronetag/dpkt'
+__version__ = '1.9.9+dt'
 
 from .dpkt import *
 
