@@ -557,8 +557,12 @@ class IEEE80211(dpkt.Packet):
             try:
                 decoder = action_parser[self.category][self.code][1]
                 field_name = action_parser[self.category][self.code][0]
+                self.decoded = True
+                self.error = None
             except KeyError:
-                raise dpkt.UnpackError("KeyError: category=%s code=%s" % (self.category, self.code))
+                self.decoded = False
+                self.error = dpkt.UnpackError("KeyError: category=%s code=%s" % (self.category, self.code))
+                return
 
             field = decoder(self.data)
             setattr(self, field_name, field)
